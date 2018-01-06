@@ -37,7 +37,7 @@ module.exports = class CopySpareWebpackPlugin {
           filePathItem = PATH.resolve(path, filePathItem);
         }
         if (!FS.existsSync(filePathItem)) {
-          this.addDependency(currentPath);
+          if (this.addDependency) this.addDependency(currentPath);
           let content = FS.readFileSync(currentPath);
           write.sync(filePathItem, content);
         }
