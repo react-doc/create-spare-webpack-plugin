@@ -1,0 +1,22 @@
+{
+  "name": "create-spare-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Create spare webpack plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Kenny Wang @jaywcjlove"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-doc/raw-tree-replace-loader.git"
+  },
+  "dependencies": {
+    "directory-tree-md": "^2.0.7",
+    "write": "^1.0.3"
+  }
+}
