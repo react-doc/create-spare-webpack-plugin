@@ -1,5 +1,6 @@
 const DirectoryTree = require('directory-tree-md');
 const PATH = require('path');
+const UPATH = require('upath');
 const write = require('write');
 const FS = require('fs');
 
@@ -31,9 +32,9 @@ module.exports = class CopySpareWebpackPlugin {
       }
       const filemds = getAllWatchPath(fileItems);
       filemds.forEach((filePathItem) => {
-        const currentPath = filePathItem
+        const currentPath = UPATH.normalizeSafe(filePathItem);
         if (sep) {
-          filePathItem = filePathItem.replace(process.cwd() + PATH.sep, '').replace(new RegExp(PATH.sep, 'g'), sep);
+          filePathItem = filePathItem.replace(process.cwd() + PATH.sep, '').replace(/\//g, sep);
           filePathItem = PATH.resolve(path, filePathItem);
         }
         if (!FS.existsSync(filePathItem)) {

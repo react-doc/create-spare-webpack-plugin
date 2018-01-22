@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "directory-tree-md": "^2.0.7",
+    "upath": "^1.0.2",
     "write": "^1.0.3"
   }
 }
