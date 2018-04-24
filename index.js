@@ -21,7 +21,7 @@ module.exports = class CopySpareWebpackPlugin {
     this.option = options;
   }
   apply(compiler) {
-    compiler.plugin("after-compile", (compilation, callback) => {
+    compiler.hooks.afterCompile.tapAsync(this.constructor.name, (compilation, callback) => {
       const { path, sep, directoryTrees } = this.option;
       const { dir, ...otherOtions } = directoryTrees;
       let fileItems = []
